@@ -46,7 +46,7 @@ class IncidentController {
       .select("ong_id")
       .first();
 
-    if (ong_id) {
+    if (!ong_id) {
       return res.status(401).json({ error: "Operation not permitted." });
     }
 
